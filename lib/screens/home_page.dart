@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rest_api_example/getApi/simple_json_with_model.dart';
 import 'package:rest_api_example/postApi/registration_login.dart';
+import 'package:rest_api_example/postApi/upload_image.dart';
 
 import '../getApi/complex_json_with_model.dart';
 import '../getApi/complex_json_without_model.dart';
@@ -61,6 +62,15 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: Text("register & Login")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => UploadImageScreen()),
+                    );
+                  },
+                  child: Text("Upload Image")),
             ],
           ),
         ),
