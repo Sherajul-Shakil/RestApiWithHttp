@@ -17,7 +17,7 @@ class UserModel {
     required this.name,
     required this.username,
     required this.email,
-    required this.address,
+    this.address,
     required this.phone,
     required this.website,
     required this.company,
@@ -27,7 +27,7 @@ class UserModel {
   String name;
   String username;
   String email;
-  Address address;
+  Address? address;
   String phone;
   String website;
   Company company;
@@ -48,7 +48,7 @@ class UserModel {
         "name": name,
         "username": username,
         "email": email,
-        "address": address.toJson(),
+        "address": address?.toJson(),
         "phone": phone,
         "website": website,
         "company": company.toJson(),
@@ -61,14 +61,14 @@ class Address {
     required this.suite,
     required this.city,
     required this.zipcode,
-    required this.geo,
+    this.geo,
   });
 
   String street;
   String suite;
   String city;
   String zipcode;
-  Geo geo;
+  Geo? geo;
 
   factory Address.fromJson(Map<String, dynamic> json) => Address(
         street: json["street"],
@@ -83,7 +83,7 @@ class Address {
         "suite": suite,
         "city": city,
         "zipcode": zipcode,
-        "geo": geo.toJson(),
+        "geo": geo?.toJson(),
       };
 }
 

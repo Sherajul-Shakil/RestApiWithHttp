@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rest_api_example/getApi/simple_json_with_model.dart';
+import 'package:rest_api_example/postApi/registration_login.dart';
 
 import '../getApi/complex_json_with_model.dart';
 import '../getApi/complex_json_without_model.dart';
@@ -42,7 +43,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => ComplexJsonWithModel()),
                     );
                   },
-                  child: Text("Complex JSON With Model")),
+                  child: Text("Simple JSON Without Model")),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -51,7 +52,15 @@ class HomePage extends StatelessWidget {
                           builder: (context) => ComplexJsonWithoutModel()),
                     );
                   },
-                  child: Text("Complex JSON Without Model")),
+                  child: Text("Simple JSON Without Model")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUpScreen()),
+                    );
+                  },
+                  child: Text("register & Login")),
             ],
           ),
         ),
